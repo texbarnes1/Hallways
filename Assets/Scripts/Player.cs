@@ -16,17 +16,21 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         maxHealth = health;
-	}
+        healthbar.gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
+        if(health < 100)
+        {
+            healthbar.gameObject.SetActive(true); 
+        }
 	}
 
     public void takeDamage(float dmg) {
         health -= dmg;
 
-        //healthbar.value = (health / maxHealth);
+        healthbar.value = (health / maxHealth);
         //print(health);
         if (health <= 0f) {
             mainCamera.SetActive(true);
