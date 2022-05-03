@@ -86,7 +86,7 @@ public class Weapon : MonoBehaviour
                 {
                     interaction.text = "Press 'E' to search cupboard";
                 }
-                
+
                 if (Input.GetKeyDown("e")) //when you press 'E' on a cupboard it adds any keys held to your keycount, and displays this to the player
                 {
                     int keysfound = hit.transform.GetComponent<Cupboard>().search();
@@ -98,12 +98,36 @@ public class Weapon : MonoBehaviour
                     {
                         interaction.text = "You found a key";
                     }
-                    else 
+                    else
                     {
                         interaction.text = "You found " + keysfound + " keys";
                     }
-                        
 
+
+                }
+                
+            } 
+            //Find Door;
+            else if (hit.transform.tag == "Door")
+            {
+                if (GameManager.instance.time > GameManager.instance.textDelay)
+                {
+                    interaction.text = "Press 'E' to open door";
+                }
+
+                if (Input.GetKeyDown("e")) //when you press 'E' on a cupboard it adds any keys held to your keycount, and displays this to the player
+                {
+                    int keysNeeded = hit.transform.GetComponent<Door>().Check();
+                    if (keysNeeded > GameManager.instance.keys)
+                    {
+                        interaction.text = "This door needs " + keysNeeded + " keys to open";
+                    }
+                    else
+                    {
+                        interaction.text = "The door opens";
+                        GameManager.instance.gameOver = GameManager.instance.time + 5; //sets the game over timer to 5 seconds
+                    }
+                    GameManager.instance.textDelay = GameManager.instance.time + 5.0f;
                 }
             }
             else
@@ -111,9 +135,6 @@ public class Weapon : MonoBehaviour
                 interaction.text = "";
             }
         }
-        else
-        {
-            interaction.text = "";
-        }
+        
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Cupboard
+  - Door
   layers:
   - Default
   - TransparentFX
