@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,13 @@ public class GameManager : MonoBehaviour {
 
     public float time;
     public float maxTime = 15;
+
+    //when the player is killed the gameOver float is set to a time and the game resets after said time
+    public float gameOver = 0;
+
+    public int keys = 0; //the number of keys the player has;
+    public float textDelay = 0; //when specific text needs to be delayed, this holds it on screen for a short time
+
 
     public GameObject player;
 
@@ -37,5 +45,9 @@ public class GameManager : MonoBehaviour {
 	void Update () {
         time += Time.deltaTime;
 
+        if (gameOver != 0 && time > gameOver)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 	}
 }
