@@ -135,6 +135,10 @@ public class Weapon : MonoBehaviour
                 interaction.text = "";
             }
         }
-        
+        else
+        {
+            interaction.text = "";
+        }
+
     }
 }
