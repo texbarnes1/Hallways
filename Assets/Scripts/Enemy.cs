@@ -18,6 +18,12 @@ public class Enemy : MonoBehaviour {
     //Effects
     public GameObject deathEffect;
 
+    //Cupboard Animators
+    public Animator rightAnimate;
+    public Animator leftAnimate;
+    public GameObject cupboard;
+    private float scale = 2; //the scale of the cupboard
+
 	// Use this for initialization
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -44,6 +50,15 @@ public class Enemy : MonoBehaviour {
         if (target)
         {
             agent.destination = target.transform.position;
+
+            //If the player is nearby open the cupboard doors
+            float proxy = Vector3.Distance(transform.position, target.transform.position);
+            rightAnimate.SetFloat("Proxy",Mathf.RoundToInt(proxy));
+            leftAnimate.SetFloat("Proxy", Mathf.RoundToInt(proxy));
+            //Also, scale up the cupboard when it gets close!
+            float scaling = Mathf.Max(2, 3.25f - proxy/6);
+            scale = Mathf.Lerp(scale, scaling, Time.deltaTime * 0.75f);
+            cupboard.transform.localScale = new Vector3(scale,scale,scale);
         }
     }
 
