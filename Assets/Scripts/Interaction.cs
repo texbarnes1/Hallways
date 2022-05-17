@@ -13,6 +13,11 @@ public class Interaction : MonoBehaviour
     public TMPro.TextMeshProUGUI interaction;
     public TMPro.TextMeshProUGUI keycount;
 
+    //A sounds for interacted objects
+    public AudioSource bell;
+    public AudioSource reverseBell;
+    public AudioSource door;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,12 +53,19 @@ public class Interaction : MonoBehaviour
                     keycount.text = "Keys: " + GameManager.instance.keys;
 
                     GameManager.instance.textDelay = GameManager.instance.time + 2.0f;
-                    if (keysfound == 1)
+                    if (keysfound == 0)
                     {
+                        bell.Play();
+                        interaction.text = "You found nothing";
+                    }
+                    else if (keysfound == 1)
+                    {
+                        door.Play();
                         interaction.text = "You found a key";
                     }
                     else
                     {
+                        door.Play();
                         interaction.text = "You found " + keysfound + " keys";
                     }
 
@@ -69,17 +81,20 @@ public class Interaction : MonoBehaviour
                     interaction.text = "Press 'E' to open door";
                 }
 
-                if (Input.GetKeyDown("e")) //when you press 'E' on a cupboard it adds any keys held to your keycount, and displays this to the player
+                if (Input.GetKeyDown("e")) //when you press 'E' on a door it checks if you have enough keys and opens the door if you do
                 {
                     int keysNeeded = hit.transform.GetComponent<Door>().Check();
                     if (keysNeeded > GameManager.instance.keys)
                     {
+                        bell.Play();
                         interaction.text = "This door needs " + keysNeeded + " keys to open";
                     }
                     else
                     {
+                        reverseBell.Play();
+                        hit.transform.GetComponent<Door>().Open();
                         interaction.text = "The door opens";
-                        GameManager.instance.gameOver = GameManager.instance.time + 0.5f; //sets the game over timer to 5 seconds
+                        GameManager.instance.gameOver = GameManager.instance.time + 1.5f; //sets the game over timer to 1.5 seconds
                     }
                     GameManager.instance.textDelay = GameManager.instance.time + 2.0f;
                 }

@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26907fc56d80fdc4bbb4f5457bb47b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animation: {fileID: 3733110195434349751}
   keysNeeded: 3
 --- !u!1001 &8965176453880800710
 PrefabInstance:
@@ -248,8 +249,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4410823339828744, guid: c77c4716527558745bd33873506541ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410823339828744, guid: c77c4716527558745bd33873506541ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 360
+      value: 322.38205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77c4716527558745bd33873506541ac, type: 3}
@@ -259,3 +264,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8965176453880800710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8965796282206086818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1790329119015780, guid: c77c4716527558745bd33873506541ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 8965176453880800710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &3733110195434349751
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965796282206086818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 7b3d12734caeddd45a820a083236c2ad, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 7b3d12734caeddd45a820a083236c2ad, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

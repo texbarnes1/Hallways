@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public Animation animation;
     public int keysNeeded = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public int Check()
     {
         return keysNeeded;
+    }
+
+    public void Open()
+    {
+        animation.Play();
     }
 }

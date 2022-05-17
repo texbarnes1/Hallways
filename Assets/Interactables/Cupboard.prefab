@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 1
+  animation: {fileID: 8820283126994978904}
 --- !u!1001 &7401482754358232301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +128,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: CupboardBase
       objectReference: {fileID: 0}
+    - target: {fileID: 8419483119953410995, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419483119953410995, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000005760117
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419483119953410995, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710665
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419483119953410995, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000005760115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419483119953410995, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 131.87036
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53ecf7547c0ba1e4e83cf72f544a7b04, type: 3}
 --- !u!4 &1329046958213977842 stripped
@@ -135,3 +161,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7401482754358232301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1331574956779999008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416643897007950797, guid: 53ecf7547c0ba1e4e83cf72f544a7b04,
+    type: 3}
+  m_PrefabInstance: {fileID: 7401482754358232301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8820283126994978904
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331574956779999008}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4a1dc8af1781da8418d569c18c2c0533, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4a1dc8af1781da8418d569c18c2c0533, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
