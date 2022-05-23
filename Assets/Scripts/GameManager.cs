@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour {
 
         if (gameOver != 0 && time > gameOver)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Start menu");
         }
 	}
 }

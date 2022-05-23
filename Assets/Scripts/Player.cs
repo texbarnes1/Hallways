@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+// using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour {
             mainCamera.transform.rotation = transform.rotation;
             GameManager.instance.gameOver = GameManager.instance.time + 5; //sets the game over timer to 5 seconds
             Destroy(gameObject);
+            //load back to main menu
+            // SceneManager.LoadScene("Start menu");
         }
     }
 }
