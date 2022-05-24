@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public FirstPersonController character;
+
+    private void Start()
+    {
+        GameIsPaused = false;
+    }
 
     void Update()
     {
@@ -26,12 +33,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        character.m_MouseLook.XSensitivity = 2f;
+        character.m_MouseLook.YSensitivity = 2f;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void Pause()
     {
+        character.m_MouseLook.XSensitivity = 0f;
+        character.m_MouseLook.YSensitivity = 0f;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -41,7 +52,6 @@ public class PauseMenu : MonoBehaviour
 
     {
         Time.timeScale = 1f;
-        // Cursor.visible = true;
         SceneManager.LoadScene("Start menu");
     }
 
@@ -50,4 +60,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quitting game...");
         Application.Quit();
     }
+
+
 }
