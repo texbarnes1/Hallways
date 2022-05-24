@@ -11,8 +11,13 @@ public class Player : MonoBehaviour {
 
     public GameObject mainCamera;
 
+    public float healthTimout = 2.5f;
+    private float healthTimer = 0;
+    public float healAdjust = 5;
+
     //UI Elements
     public Slider healthbar;
+    public Image Bleed;
 
 	// Use this for initialization
 	void Start () {
@@ -22,16 +27,33 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(health < 100)
+        if(health < maxHealth)
         {
-            healthbar.gameObject.SetActive(true); 
+            healthbar.gameObject.SetActive(true);
+            healthTimer += Time.deltaTime;
+            if (healthTimer > healthTimout)
+            {
+                takeDamage(-healAdjust * Time.deltaTime);
+            }
+        }
+        else
+        {
+            healthbar.gameObject.SetActive(false);
+            health = maxHealth;
+            healthTimer = 0;
         }
 	}
 
     public void takeDamage(float dmg) {
+        if (dmg > 0)
+        {
+            healthTimer = 0;
+        }
         health -= dmg;
 
         healthbar.value = (health / maxHealth);
+
+        Bleed.color = new Color(1, 1, 1,  (100 - health)/100);
         //print(health);
         if (health <= 0f) {
             mainCamera.SetActive(true);
