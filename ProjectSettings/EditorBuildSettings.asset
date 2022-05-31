@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HallwaysPrototype.unity
     guid: 8d3cada6b88ecfd4bb14ec1d7b5261ca
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 884c4575efd198f4ab546d39a142c121
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: d1f484654314842498999a6c003ba24a
   m_configObjects: {}
