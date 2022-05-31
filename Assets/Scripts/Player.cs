@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
 	void Update () {
         if(health < maxHealth)
         {
-            healthbar.gameObject.SetActive(true);
+            //healthbar.gameObject.SetActive(true);
             healthTimer += Time.deltaTime;
             if (healthTimer > healthTimout)
             {

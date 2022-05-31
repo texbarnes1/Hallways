@@ -94,6 +94,7 @@ public class Interaction : MonoBehaviour
                         reverseBell.Play();
                         hit.transform.GetComponent<Door>().Open();
                         interaction.text = "The door opens";
+                        GameManager.instance.win = true;
                         GameManager.instance.gameOver = GameManager.instance.time + 1.5f; //sets the game over timer to 1.5 seconds
                     }
                     GameManager.instance.textDelay = GameManager.instance.time + 2.0f;

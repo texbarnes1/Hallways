@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 
     //when the player is killed the gameOver float is set to a time and the game resets after said time
     public float gameOver = 0;
+    public bool win = false;
+
 
     public int keys = 0; //the number of keys the player has;
     public float textDelay = 0; //when specific text needs to be delayed, this holds it on screen for a short time
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
 
     public float maxMusicVolume = 0.85f;
+
 
     // Awake Checks - Singleton setup
     void Awake() {
@@ -41,7 +44,8 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -49,8 +53,23 @@ public class GameManager : MonoBehaviour {
 
         if (gameOver != 0 && time > gameOver)
         {
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("Start menu");
+            if (win)
+            {
+                if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
+                {
+                    SceneManager.LoadScene("Start menu");
+                }
+                else
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+               
+
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 	}
 }
