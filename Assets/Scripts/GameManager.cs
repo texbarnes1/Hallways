@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player;
 
+    public float maxMusicVolume = 0.85f;
+
     // Awake Checks - Singleton setup
     void Awake() {
 

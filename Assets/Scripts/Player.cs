@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
     public Slider healthbar;
     public Image Bleed;
 
+    public MusicBox music;
+
 	// Use this for initialization
 	void Start () {
         maxHealth = health;
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour {
         if (dmg > 0)
         {
             healthTimer = 0;
+            music.Hit();
         }
         health -= dmg;
 
