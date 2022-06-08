@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
 
     public GameObject mainCamera;
 
+    public Camera camera;
+
     public float healthTimout = 2.5f;
     private float healthTimer = 0;
     public float healAdjust = 5;
@@ -45,7 +47,16 @@ public class Player : MonoBehaviour {
             health = maxHealth;
             healthTimer = 0;
         }
-	}
+
+        //if (GameManager.instance.canSprint)
+        //{
+        //    camera.fieldOfView = Mathf.Lerp(camera.fieldOfView,130f,Time.deltaTime * 5);
+        //}
+        //else
+        //{
+        //    camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 95f, Time.deltaTime * 5);
+        //}
+    }
 
     public void takeDamage(float dmg) {
         if (dmg > 0)

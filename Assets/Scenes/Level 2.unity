@@ -9062,6 +9062,9 @@ MonoBehaviour:
   maxMusicVolume: 0.85
   musicLoad: {fileID: 6550385118483576310, guid: 50a53eb6caf39bd4987af8df32d7c095,
     type: 3}
+  sprintDuration: 1
+  sprintCooldown: 5
+  canSprint: 1
 --- !u!4 &1127582713
 Transform:
   m_ObjectHideFlags: 0
@@ -10547,7 +10550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RunSpeed
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSpeed
