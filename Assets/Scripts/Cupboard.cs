@@ -20,10 +20,16 @@ public class Cupboard : MonoBehaviour
 
     public int search()
     {
-        animation.Play();
-        int keysHeld = keys;
-        keys = 0;
-        return keysHeld;
+        if (keys > 0){
+            animation.Play();
+            int keysHeld = keys;
+            keys = 0;
+            return keysHeld;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public void Open()

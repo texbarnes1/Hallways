@@ -43,7 +43,7 @@ public class Interaction : MonoBehaviour
             {
                 if (GameManager.instance.time > GameManager.instance.textDelay)
                 {
-                    interaction.text = "Press 'E' to search cupboard";
+                    interaction.text = "'E' to Search";
                 }
 
                 if (Input.GetKeyDown("e")) //when you press 'E' on a cupboard it adds any keys held to your keycount, and displays this to the player
@@ -56,17 +56,17 @@ public class Interaction : MonoBehaviour
                     if (keysfound == 0)
                     {
                         bell.Play();
-                        interaction.text = "You found nothing";
+                        interaction.text = "You found Nothing";
                     }
                     else if (keysfound == 1)
                     {
                         door.Play();
-                        interaction.text = "You found a key";
+                        interaction.text = "You found a Key";
                     }
                     else
                     {
                         door.Play();
-                        interaction.text = "You found " + keysfound + " keys";
+                        interaction.text = "You found " + keysfound + " Keys";
                     }
 
 
@@ -78,7 +78,7 @@ public class Interaction : MonoBehaviour
             {
                 if (GameManager.instance.time > GameManager.instance.textDelay)
                 {
-                    interaction.text = "Press 'E' to open door";
+                    interaction.text = "'E' to Open";
                 }
 
                 if (Input.GetKeyDown("e")) //when you press 'E' on a door it checks if you have enough keys and opens the door if you do
@@ -87,13 +87,21 @@ public class Interaction : MonoBehaviour
                     if (keysNeeded > GameManager.instance.keys)
                     {
                         bell.Play();
-                        interaction.text = "This door needs " + keysNeeded + " keys to open";
+                        if (keysNeeded == 1)
+                        {
+                            interaction.text = "This Door needs a Key to Open";
+                        }
+                        else
+                        {
+                            interaction.text = "This Door needs " + keysNeeded + " Keys to Open";
+                        }
+                        
                     }
                     else
                     {
                         reverseBell.Play();
                         hit.transform.GetComponent<Door>().Open();
-                        interaction.text = "The door opens";
+                        interaction.text = "";
                         GameManager.instance.win = true;
                         GameManager.instance.gameOver = GameManager.instance.time + 1.5f; //sets the game over timer to 1.5 seconds
                     }

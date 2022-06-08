@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 1e3069d598f526944b5e304f44ca762a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Eczar
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 475bda2ae0bc3a4419af9490cadc36ce, type: 3}
+  - {fileID: 12800000, guid: 1a92fc300c5d9b047848d1251813c0ab, type: 3}
+  - {fileID: 12800000, guid: bddee7211e2808a42a3754bc40677e98, type: 3}
+  - {fileID: 12800000, guid: 09baba4a006a5e1468fb002b96b6c515, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

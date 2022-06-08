@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject optionsMenuUI;
     public FirstPersonController character;
 
     private void Start()
@@ -18,6 +19,16 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (GameIsPaused == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -35,15 +46,21 @@ public class PauseMenu : MonoBehaviour
     {
         character.m_MouseLook.XSensitivity = 2f;
         character.m_MouseLook.YSensitivity = 2f;
+        optionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    void Pause()
+    public void Pause()
     {
         character.m_MouseLook.XSensitivity = 0f;
         character.m_MouseLook.YSensitivity = 0f;
         pauseMenuUI.SetActive(true);
+        optionsMenuUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -52,7 +69,13 @@ public class PauseMenu : MonoBehaviour
 
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Start menu");
+        SceneManager.LoadScene("Start MenuTest");
+    }
+    public void LoadOptions()
+    {
+        
+        pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(true);
     }
 
     public void QuitGame()

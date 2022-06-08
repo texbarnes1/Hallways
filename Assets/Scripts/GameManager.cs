@@ -25,10 +25,23 @@ public class GameManager : MonoBehaviour {
 
     public float maxMusicVolume = 0.85f;
 
+    public GameObject musicLoad;
+
+    GameObject musicBox;
 
     // Awake Checks - Singleton setup
     void Awake() {
+        musicBox = GameObject.Find("MusicBox");
+        if (musicBox == null)
+        {
+            musicBox = (GameObject)Instantiate(musicLoad);
+            musicBox.name = "MusicBox";
+        }
+        else
+        {
+            musicBox.GetComponent<MusicBox>().music.volume = 0;
 
+        }
         //Check if instance already exists
         if (instance == null)
 
@@ -44,11 +57,13 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
+        RenderSettings.ambientLight = new Color(0.02745098f * OptionsControls.brightness, 0.6313726f * OptionsControls.brightness, 0.5450981f * OptionsControls.brightness);
+        
         time += Time.deltaTime;
 
         if (gameOver != 0 && time > gameOver)
@@ -57,7 +72,7 @@ public class GameManager : MonoBehaviour {
             {
                 if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
                 {
-                    SceneManager.LoadScene("Start menu");
+                    SceneManager.LoadScene("Start MenuTest");
                 }
                 else
                 {
