@@ -29,6 +29,13 @@ public class GameManager : MonoBehaviour {
 
     GameObject musicBox;
 
+    public float sprintDuration = 1f;
+    private float sprintTimer = 0;
+    public float sprintCooldown = 5f;
+    private float sprintCooldownTimer = 0f;
+    //technically canSprint is more: is sprinting
+    public bool canSprint = true;
+
     // Awake Checks - Singleton setup
     void Awake() {
         musicBox = GameObject.Find("MusicBox");
@@ -85,6 +92,36 @@ public class GameManager : MonoBehaviour {
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+        }
+        //if the player is pressing shift:
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //if they are within a short sprint window they can sprint, otherwise they can't 
+            if (sprintTimer < sprintDuration)
+            {
+                canSprint = true;
+                sprintTimer += Time.deltaTime;
+            }
+            else
+            {
+                canSprint = false;
+            }
+            
+        }
+        else
+        {
+            canSprint = false;
+        }
+        
+        //if the sprint lasts too long the player must wait for a cooldown
+        if (sprintTimer > 0f && sprintCooldownTimer < sprintCooldown)
+        {
+            sprintCooldownTimer += Time.deltaTime;
+        }
+        else if (sprintTimer > 0)
+        {
+            sprintCooldownTimer = 0f;
+            sprintTimer = 0f;
         }
 	}
 }

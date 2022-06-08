@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
             mainCamera.SetActive(true);
             mainCamera.transform.position = transform.position;
             mainCamera.transform.rotation = transform.rotation;
-            GameManager.instance.gameOver = GameManager.instance.time + 5; //sets the game over timer to 5 seconds
+            GameManager.instance.gameOver = GameManager.instance.time + 1; //sets the game over timer to 5 seconds
             Destroy(gameObject);
             //load back to main menu
             // SceneManager.LoadScene("Start menu");

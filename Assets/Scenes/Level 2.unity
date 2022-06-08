@@ -841,7 +841,7 @@ RectTransform:
   - {fileID: 54014526}
   - {fileID: 1242837026}
   m_Father: {fileID: 296042319}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2509,8 +2509,8 @@ RectTransform:
   - {fileID: 743267131}
   - {fileID: 1063305446}
   - {fileID: 565232851}
-  - {fileID: 641842342}
   - {fileID: 86478388}
+  - {fileID: 641842342}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9124,7 +9124,7 @@ PrefabInstance:
     - target: {fileID: 6612479716863021335, guid: 8c14898c9ce0fe44dad477221a88b3c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6612479716863021335, guid: 8c14898c9ce0fe44dad477221a88b3c9,
         type: 3}
@@ -10551,7 +10551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSpeed
-      value: 6.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_WalkSpeed

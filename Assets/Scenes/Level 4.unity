@@ -1672,7 +1672,7 @@ PrefabInstance:
     - target: {fileID: 1399951724139928675, guid: fd1a65032b220d442a43a225c26c27fb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1399951724139928675, guid: fd1a65032b220d442a43a225c26c27fb,
         type: 3}
@@ -2087,7 +2087,7 @@ RectTransform:
   - {fileID: 1838297980}
   - {fileID: 2129954173}
   m_Father: {fileID: 296042319}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2411,8 +2411,8 @@ RectTransform:
   - {fileID: 743267131}
   - {fileID: 1063305446}
   - {fileID: 565232851}
-  - {fileID: 1026201618}
   - {fileID: 264294598}
+  - {fileID: 1026201618}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9407,6 +9407,9 @@ MonoBehaviour:
   maxMusicVolume: 0.85
   musicLoad: {fileID: 6550385118483576310, guid: 50a53eb6caf39bd4987af8df32d7c095,
     type: 3}
+  sprintDuration: 1
+  sprintCooldown: 5
+  canSprint: 1
 --- !u!4 &1127582713
 Transform:
   m_ObjectHideFlags: 0
@@ -11045,11 +11048,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RunSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSpeed
-      value: 6.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_WalkSpeed
@@ -14680,7 +14683,7 @@ PrefabInstance:
     - target: {fileID: 1606726718978636215, guid: 4a9f059df3375f048b0b2efd8f595750,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1606726718978636215, guid: 4a9f059df3375f048b0b2efd8f595750,
         type: 3}
