@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        music = GameObject.Find("MusicBox").GetComponent<MusicBox>();
         maxHealth = health;
         healthbar.gameObject.SetActive(false);
     }
