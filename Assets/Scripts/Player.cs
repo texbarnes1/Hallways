@@ -23,8 +23,10 @@ public class Player : MonoBehaviour {
 
     public MusicBox music;
 
-	// Use this for initialization
-	void Start () {
+    public TMPro.TextMeshProUGUI sprintInt;
+
+    // Use this for initialization
+    void Start () {
         music = GameObject.Find("MusicBox").GetComponent<MusicBox>();
         maxHealth = health;
         healthbar.gameObject.SetActive(false);
@@ -47,15 +49,8 @@ public class Player : MonoBehaviour {
             health = maxHealth;
             healthTimer = 0;
         }
+        SprintIndicator();
 
-        //if (GameManager.instance.canSprint)
-        //{
-        //    camera.fieldOfView = Mathf.Lerp(camera.fieldOfView,130f,Time.deltaTime * 5);
-        //}
-        //else
-        //{
-        //    camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 95f, Time.deltaTime * 5);
-        //}
     }
 
     public void takeDamage(float dmg) {
@@ -79,5 +74,66 @@ public class Player : MonoBehaviour {
             //load back to main menu
             // SceneManager.LoadScene("Start menu");
         }
+    }
+
+    //Used to control how the player is indicated information about sprinting
+    public void SprintIndicator()
+    {
+        if (GameManager.instance.canSprint)
+        {
+            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 160f, Time.deltaTime * 0.75f);
+        }
+        else
+        {
+            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 95f, Time.deltaTime * 0.5f);
+        }
+
+        if (GameManager.instance.canSprint)
+        {
+            sprintInt.text = "";
+
+            
+        }
+        else if(GameManager.instance.sprintTimer < GameManager.instance.sprintDuration)
+        {
+            sprintInt.text = "";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 1)
+        {
+            sprintInt.text = "Breathing";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 1.5f)
+        {
+            sprintInt.text = "Breathing.";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 2)
+        {
+            sprintInt.text = "Breathing..";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 2.5f)
+        {
+            sprintInt.text = "Breathing...";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 3)
+        {
+            sprintInt.text = "Breathing....";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 3.5f)
+        {
+            sprintInt.text = "Breathing.....";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 4)
+        {
+            sprintInt.text = "Breathing......";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 4.5f)
+        {
+            sprintInt.text = "Breathing.......";
+        }
+        else if (GameManager.instance.sprintCooldownTimer < 5)
+        {
+            sprintInt.text = "Breathing.........";
+        }
+
     }
 }

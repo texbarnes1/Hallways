@@ -38,21 +38,21 @@ float4 _Params; // x=radius, y=minz, z=attenuation power, w=SSAO power
 #if defined(SHADER_API_XBOX360)|| defined(SHADER_API_D3D11)
 
 #	define INPUT_SAMPLE_COUNT 8
-#	include "frag_ao.cginc"
+#	//include "frag_ao.cginc"
 
 #	define INPUT_SAMPLE_COUNT 14
-#	include "frag_ao.cginc"
+#	//include "frag_ao.cginc"
 
 #	define INPUT_SAMPLE_COUNT 26
-#	include "frag_ao.cginc"
+#	//include "frag_ao.cginc"
 
 #	define INPUT_SAMPLE_COUNT 34
-#	include "frag_ao.cginc"
+#	//include "frag_ao.cginc"
 
 #else
 
 #	define INPUT_SAMPLE_COUNT
-#	include "frag_ao.cginc"
+#	//include "frag_ao.cginc"
 
 #endif
 

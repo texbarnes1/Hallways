@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour {
     GameObject musicBox;
 
     public float sprintDuration = 1f;
-    private float sprintTimer = 0;
+    public float sprintTimer = 0;
     public float sprintCooldown = 5f;
-    private float sprintCooldownTimer = 0f;
+    public float sprintCooldownTimer = 0f;
     //technically canSprint is more: is sprinting
     public bool canSprint = true;
 
@@ -43,11 +43,6 @@ public class GameManager : MonoBehaviour {
         {
             musicBox = (GameObject)Instantiate(musicLoad);
             musicBox.name = "MusicBox";
-        }
-        else
-        {
-            musicBox.GetComponent<MusicBox>().music.volume = 0;
-
         }
         //Check if instance already exists
         if (instance == null)
@@ -75,6 +70,7 @@ public class GameManager : MonoBehaviour {
 
         if (gameOver != 0 && time > gameOver)
         {
+            musicBox.GetComponent<MusicBox>().music.volume = 0;
             if (win)
             {
                 if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)

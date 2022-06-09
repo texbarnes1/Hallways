@@ -23,9 +23,18 @@ public class MusicBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (music.volume != OptionsControls.musicVol)
         {
-            music.volume = Mathf.Lerp(music.volume, OptionsControls.musicVol, Time.unscaledDeltaTime * heal);
+            if (OptionsControls.inMenu)
+            {
+                music.volume = OptionsControls.musicVol;
+            }
+            else
+            {
+                music.volume = Mathf.Lerp(music.volume, OptionsControls.musicVol, Time.unscaledDeltaTime * heal * 0.75f);
+            }
+            
         }
     }
 

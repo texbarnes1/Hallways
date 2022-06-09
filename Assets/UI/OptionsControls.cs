@@ -8,4 +8,6 @@ public static class OptionsControls
     public static float effectVol = 1;
     public static float brightness = 1f;
 
+    public static bool inMenu = false;
+
 }

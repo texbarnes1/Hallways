@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        OptionsControls.inMenu = false;
         character.m_MouseLook.XSensitivity = 2f;
         character.m_MouseLook.YSensitivity = 2f;
         optionsMenuUI.SetActive(false);
@@ -55,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        OptionsControls.inMenu = false;
         character.m_MouseLook.XSensitivity = 0f;
         character.m_MouseLook.YSensitivity = 0f;
         pauseMenuUI.SetActive(true);
@@ -68,12 +70,13 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
 
     {
+        OptionsControls.inMenu = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start MenuTest");
     }
     public void LoadOptions()
     {
-        
+        OptionsControls.inMenu = true;
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(true);
     }

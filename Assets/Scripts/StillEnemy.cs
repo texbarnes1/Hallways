@@ -60,10 +60,6 @@ public class StillEnemy : MonoBehaviour
             float proxy1 = Vector3.Distance(transform.position, target.transform.position);
             rightAnimate.SetFloat("Proxy", Mathf.RoundToInt(proxy1));
             leftAnimate.SetFloat("Proxy", Mathf.RoundToInt(proxy1));
-            ////Also, scale up the cupboard when it gets close!
-            //float scaling = Mathf.Max(2, 3.25f - proxy1 / 6);
-            //scale = Mathf.Lerp(scale, scaling, Time.deltaTime * 0.75f);
-            //cupboard.transform.localScale = new Vector3(scale, scale, scale);
             
             if (proxy1 <= detectionRadius)
             {
