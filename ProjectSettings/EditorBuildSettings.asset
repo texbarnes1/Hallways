@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: 37e76c77078b99748a96bf71bddb9cad
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: eba43be027a66fb44a44336ea2fc9770
   - enabled: 0
     path: Assets/Scenes/HallwaysPrototype.unity
     guid: 8d3cada6b88ecfd4bb14ec1d7b5261ca
