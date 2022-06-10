@@ -46,4 +46,11 @@ public class Options : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Start MenuTest");
     }
+
+    public void StartGame()
+    {
+        GameObject.Find("MusicBox").GetComponent<AudioSource>().Play();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Start MenuTest");
+    }
 }

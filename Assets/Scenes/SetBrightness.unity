@@ -1798,6 +1798,13 @@ MonoBehaviour:
   textDelay: 0
   player: {fileID: 0}
   maxMusicVolume: 0.85
+  musicLoad: {fileID: 6550385118483576310, guid: 50a53eb6caf39bd4987af8df32d7c095,
+    type: 3}
+  sprintDuration: 1
+  sprintTimer: 0
+  sprintCooldown: 5
+  sprintCooldownTimer: 0
+  canSprint: 1
 --- !u!4 &1127582713
 Transform:
   m_ObjectHideFlags: 0
@@ -3434,7 +3441,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4911809349576902206}
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
-        m_MethodName: LoadMenu
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
